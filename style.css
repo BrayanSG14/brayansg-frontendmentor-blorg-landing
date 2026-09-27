@@ -1,0 +1,590 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: #4B5762;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  position: relative;
+  padding: 50px 24px 150px;
+  background-image: url("./images/bg-pattern-intro-mobile.svg"), linear-gradient(135deg, #FF8F70, #FF3D54);
+  background-repeat: no-repeat;
+  background-position: 30% 35%, center;
+  border-bottom-left-radius: 100px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-menu {
+  background: none;
+  border: none;
+}
+
+.btn-menu:hover {
+  cursor: pointer;
+}
+
+.btn-menu:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 110px;
+  left: 24px;
+  right: 24px;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 24px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px #00000033;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1F3E5A;
+}
+
+.btn-dropdown:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btn-dropdown:focus-visible {
+  outline: 2px solid #1F3E5A;
+  outline-offset: 4px;
+}
+
+.arrow-light {
+  display: none;
+}
+
+.nav-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 24px;
+  background-color: #EFEFF1;
+  border-radius: 5px;
+}
+
+.nav-item.active .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  color: #4B5762;
+}
+
+.dropdown a:hover {
+  font-weight: 600;
+  color: #1F3E5A;
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding-top: 24px;
+  border-top: 1px solid #EFEFF1;
+}
+
+.btn-login {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1F3E5A;
+}
+
+.btn-login:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btn-login:focus-visible {
+  outline: 2px solid #1F3E5A;
+  outline-offset: 4px;
+}
+
+.btn-signup {
+  padding: 14px 44px;
+  border-radius: 30px;
+  background-image: linear-gradient(90deg, #FF8F70, #FF3D54);
+  font-weight: 700;
+  color: white;
+}
+
+.btn-signup:hover {
+  background-image: none;
+  background-color: #FF7B86;
+  cursor: pointer;
+}
+
+.btn-signup:focus-visible {
+  outline: 2px solid #1F3E5A;
+  outline-offset: 4px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 120px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-family: "Overpass", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.btn-start {
+  padding: 14px 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: white;
+  font-weight: 700;
+  color: #FF505C;
+}
+
+.btn-start:hover {
+  border-color: #FF7B86;
+  background-color: #FF7B86;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-start:focus-visible {
+  outline: 2px solid #1F3E5A;
+  outline-offset: 4px;
+}
+
+.btn-learn {
+  padding: 14px 24px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.btn-learn:hover {
+  background-color: white;
+  color: #FF505C;
+  cursor: pointer;
+}
+
+.btn-learn:focus-visible {
+  outline: 2px solid #1F3E5A;
+  outline-offset: 4px;
+}
+
+.features {
+  padding: 80px 0 250px;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 48px;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1F3E5A;
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.img-editor-mobile {
+  width: 100%;
+}
+
+.img-editor-desktop {
+  display: none;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.text-group h3 {
+  margin-bottom: 24px;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1F3E5A;
+}
+
+.text-group p {
+  line-height: 1.8;
+}
+
+.infrastructure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0 24px 80px;
+  background-image: url("./images/bg-pattern-circles.svg"), linear-gradient(180deg, #2C2D3F, #3F4165);
+  background-repeat: no-repeat;
+  background-position: center -200px, center;
+  border-radius: 0 100px 0 100px;
+  text-align: center;
+  color: white;
+}
+
+.img-phones {
+  width: 100%;
+  max-width: 450px;
+  margin-top: -150px;
+}
+
+.infrastructure-text h2 {
+  margin-bottom: 24px;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.infrastructure-text p {
+  line-height: 1.8;
+  color: #C8C8C9;
+}
+
+.tooling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 150px 0;
+}
+
+.img-laptop-mobile {
+  width: 100%;
+}
+
+.img-laptop-desktop {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 72px 24px;
+  background-color: #25252D;
+  border-top-right-radius: 100px;
+  text-align: center;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-column h3 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-column a {
+  font-size: 0.9375rem;
+  color: #C8C8C9;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 60px 165px 160px;
+    background-image: url("./images/bg-pattern-intro-desktop.svg"), linear-gradient(135deg, #FF8F70, #FF3D54);
+    background-position: 30% 55%, center;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 64px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 32px;
+    width: auto;
+  }
+
+  .nav-item {
+    position: relative;
+    width: auto;
+  }
+
+  .btn-dropdown {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .btn-dropdown:focus-visible {
+    outline-color: white;
+  }
+
+  .arrow-dark {
+    display: none;
+  }
+
+  .arrow-light {
+    display: block;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 40px;
+    left: -24px;
+    z-index: 10;
+    width: 170px;
+    margin-top: 0;
+    background-color: white;
+    box-shadow: 0 10px 20px #00000033;
+    text-align: left;
+  }
+
+  .dropdown a {
+    font-family: "Ubuntu", sans-serif;
+    color: #1F3E5A;
+  }
+
+  .dropdown a:hover {
+    font-weight: 700;
+  }
+
+  .nav-buttons {
+    flex-direction: row;
+    gap: 40px;
+    width: auto;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .btn-login {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .btn-login:focus-visible {
+    outline-color: white;
+  }
+
+  .btn-signup {
+    background-image: none;
+    background-color: white;
+    color: #FF505C;
+  }
+
+  .btn-signup:hover {
+    color: white;
+  }
+
+  .btn-signup:focus-visible {
+    outline-color: white;
+  }
+
+  .hero {
+    margin-top: 150px;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+
+  .features {
+    padding: 120px 0 250px;
+  }
+
+  .features h2 {
+    margin-bottom: 64px;
+    font-size: 2.5rem;
+  }
+
+  .features-content {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .img-editor-mobile {
+    display: none;
+  }
+
+  .img-editor-desktop {
+    display: block;
+    flex-shrink: 0;
+    width: 60%;
+    margin-right: -15%;
+  }
+
+  .text-group {
+    width: 45%;
+    padding: 0 0 0 165px;
+    text-align: left;
+  }
+
+  .text-group h3 {
+    font-size: 1.75rem;
+  }
+
+  .infrastructure {
+    flex-direction: row;
+    gap: 100px;
+    height: 400px;
+    padding: 0 165px 0 100px;
+    background-position: -150px -350px, center;
+    text-align: left;
+  }
+
+  .img-phones {
+    flex-shrink: 0;
+    width: 560px;
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .infrastructure-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .tooling {
+    flex-direction: row;
+    gap: 0;
+    padding: 250px 0 180px;
+  }
+
+  .img-laptop-mobile {
+    display: none;
+  }
+
+  .img-laptop-desktop {
+    display: block;
+    flex-shrink: 0;
+    width: 55%;
+    margin-left: -10%;
+  }
+
+  .tooling .text-group {
+    padding: 0 165px 0 0;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 150px;
+    padding: 72px 165px;
+    text-align: left;
+  }
+}
